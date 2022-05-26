@@ -8,21 +8,22 @@ class TestHello(unittest.TestCase):
         app.app.testing = True
         self.app = app.app.test_client()
 
-    def test_hello(self):
+    def test_intro(self):
         rv = self.app.get('/')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'Hello World!\n')
+        self.assertEqual(rv.data, b'This is a geometry calculator\n')
 
-    def test_hello_hello(self):
-        rv = self.app.get('/hello/')
+    def test_circle(self):
+        radius= '5'
+        rv = self.app.get(f'/circle/{radius}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'Hello World!\n')
+        self.assertEqual(rv.data, b'25\n')
 
     def test_hello_name(self):
-        name = 'Simon'
-        rv = self.app.get(f'/hello/{name}')
+        side = '7'
+        rv = self.app.get(f'/hello/{side}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertIn(bytearray(f"{name}", 'utf-8'), rv.data)
+        self.assertEqual(rv.data, b'49\n')
 
 if __name__ == '__main__':
     import xmlrunner
