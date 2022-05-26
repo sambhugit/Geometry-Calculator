@@ -17,11 +17,11 @@ class TestHello(unittest.TestCase):
         radius= '5'
         rv = self.app.get(f'/circle/{radius}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'25\n')
+        self.assertEqual(rv.data, b'78.5\n')
 
-    def test_hello_name(self):
+    def test_square(self):
         side = '7'
-        rv = self.app.get(f'/hello/{side}')
+        rv = self.app.get(f'/square/{side}')
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'49\n')
 
