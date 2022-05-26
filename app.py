@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 from flask import Flask
 app = Flask(__name__)
-@app.route('/square')
+@app.route('/square/<side>')
 def square(side):
     side= int(side)
     return str(side*side)+"\n"
 
-@app.route('/circle')
+@app.route('/circle/<radius>')
 def circle(radius):
     radius= int(radius)
     return str(3.14*radius*radius)+"\n"
