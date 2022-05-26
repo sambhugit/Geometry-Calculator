@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 from flask import Flask
 app = Flask(__name__)
+@app.route('/square')
+def square(side):
+    side= int(side)
+    return str(side*side)+"\n"
+
+@app.route('/circle')
+def circle(radius):
+    radius= int(radius)
+    return str(3.14*radius*radius)+"\n"
 
 @app.route('/')
-@app.route('/hello')  # this route is not working
-@app.route('/hello/')
-def hello_world():
-    return 'Hello World!\n'
-
-@app.route('/hello/<username>') # dynamic route
-def hello_user(username):
-    # show the user profile for that user
-    return 'Why Hello %s!\n' % username
+def intro():
+    return "This is a geometry calculator\n"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')  # open for everyone
