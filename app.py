@@ -4,8 +4,8 @@ app = Flask(__name__)
 @app.route('/square/<side>')
 def square(side):
     side= int(side)
-    side+=2
-    side-=2
+    side+=3
+    side-=3
     return str(side*side)+"\n"
 
 @app.route('/circle/<radius>')
