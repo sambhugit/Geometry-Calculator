@@ -3,5 +3,5 @@ PyInstaller.__main__.run([
      'abcd',
      '--onefile',
      '--windowed',
-     'app.py'
+     '/var/lib/jenkins/workspace/hfclpipeline2/app.py'
 ])
