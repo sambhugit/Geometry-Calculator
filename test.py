@@ -14,7 +14,7 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.data, b'This is a geometry calculator\n')
 
     def test_circle(self):
-        radius= input()
+        radius= '5'
         tmpr= 3.14*int(radius)*int(radius)
         tmpr= str(tmpr)
         rv = self.app.get(f'/circle/{radius}')
@@ -22,7 +22,7 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.data, b'%s\n'%tmpr)
 
     def test_square(self):
-        side = input()
+        side = 7
         tmpr= int(side)*int(side)
         tmpr= str(tmpr)
         rv = self.app.get(f'/square/{side}')
