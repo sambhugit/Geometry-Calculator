@@ -13,7 +13,7 @@ pipeline {
       post {
         always {
           junit 'test-reports/*.xml'
-          pyinstaller app.py --onefile
+          sh 'pyinstaller app.py --onefile'
         }
       }    
     }
