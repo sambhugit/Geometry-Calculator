@@ -14,16 +14,20 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.data, b'This is a geometry calculator\n')
 
     def test_circle(self):
-        radius= '5'
+        radius= input()
+        tmpr= 3.14*int(radius)*int(radius)
+        tmpr= str(tmpr)
         rv = self.app.get(f'/circle/{radius}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'78.5\n')
+        self.assertEqual(rv.data, b'%s\n'%tmpr)
 
     def test_square(self):
-        side = '7'
+        side = input()
+        tmpr= int(side)*int(side)
+        tmpr= str(tmpr)
         rv = self.app.get(f'/square/{side}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'49\n')
+        self.assertEqual(rv.data, b'%s\n'%tmpr)
 
 if __name__ == '__main__':
     import xmlrunner
