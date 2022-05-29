@@ -4,5 +4,5 @@ PyInstaller.__main__.run([
      'name-%s' % 'hfclpipbinary',
      '--onefile',
      '--windowed',
-     os.path.join('/var/lib/jenkins/workspace/hfclpipeline2/', 'app.py'), """your script and path to the script"""                                        
+     os.path.join('/var/lib/jenkins/workspace/hfclpipeline2/', 'app.py')                                        
 ])
