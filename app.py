@@ -16,4 +16,5 @@ def intro():
     return "This is a geometry calculator\n"
 
 if __name__ == '__main__':
+    print("This is app.py")
     app.run(host='0.0.0.0')  # open for everyone
