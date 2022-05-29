@@ -19,7 +19,7 @@ class TestHello(unittest.TestCase):
         tmpr= str(tmpr)
         rv = self.app.get(f'/circle/{radius}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'%s\n'%tmpr)
+        self.assertEqual(rv.data, '%s\n'%tmpr)
 
     def test_square(self):
         side = 7
@@ -27,7 +27,7 @@ class TestHello(unittest.TestCase):
         tmpr= str(tmpr)
         rv = self.app.get(f'/square/{side}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'%s\n'%tmpr)
+        self.assertEqual(rv.data, '%s\n'%tmpr)
 
 if __name__ == '__main__':
     import xmlrunner
