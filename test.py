@@ -19,13 +19,13 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'78.5\n')
         
-   def test_sphere(self):
+    def test_sphere(self):
         radius= '5'
         rv = self.app.get(f'/sphere/{radius}')
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'314\n') 
-        
-   def test_spherevol(self):
+
+    def test_spherevol(self):
         radius= '5'
         rv = self.app.get(f'/spherevol/{radius}')
         self.assertEqual(rv.status, '200 OK')
