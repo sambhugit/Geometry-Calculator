@@ -23,13 +23,13 @@ class TestHello(unittest.TestCase):
         radius= '5'
         rv = self.app.get(f'/sphere/{radius}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'314\n') 
+        self.assertEqual(rv.data, b'314.0\n') 
 
     def test_spherevol(self):
         radius= '5'
         rv = self.app.get(f'/spherevol/{radius}')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b'510.25\n')
+        self.assertEqual(rv.data, b'510.25000000000006\n')
 
     def test_square(self):
         side = '7'
@@ -47,7 +47,7 @@ class TestHello(unittest.TestCase):
         
     def test_cuboidvol(self):
         side = '7'
-        rv = self.app.get(f'/cuboid/{side}')
+        rv = self.app.get(f'/cuboidvol/{side}')
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'343\n')
 
