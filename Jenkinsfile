@@ -17,7 +17,6 @@ pipeline {
         }
       }    
     }
-    node {
   stage('SCM') {
     checkout scm
   }
@@ -27,6 +26,5 @@ pipeline {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
-}
-  }
+ }
 }
