@@ -12,7 +12,6 @@ pipeline {
       }
       post {
         always {
-          junit 'test-reports/*.xml'
           sh 'python3 tobin.py'
         }
       }    
