@@ -14,6 +14,7 @@ def circle(radius):
 @app.route('/sphere/<radius>')
 def sphere(radius):
     radius= int(radius)
+    a=2
     return str(4*3.14*radius*radius)+"\n"
 
 @app.route('/cuboid/<side>')
