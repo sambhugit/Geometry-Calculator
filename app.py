@@ -9,7 +9,6 @@ def square(side):
 @app.route('/circle/<radius>')
 def circle(radius):
     radius= int(radius)
-    a=2
     return str(3.14*radius*radius)+"\n"
 
 @app.route('/sphere/<radius>')
